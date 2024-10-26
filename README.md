@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 # mightyjaxx
 This is automation for mightyjaxx
+=======
+>>>>>>> 81b5349 (Add new project files)
 #Last Update time: Sun 27 Oct, 2024
 **1. Project Structure**
 
