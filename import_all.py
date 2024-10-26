@@ -3,11 +3,11 @@ import os
 from playwright.async_api import async_playwright
 from datetime import datetime
 
-from mightyjaxx.config.environment import Config
-from mightyjaxx.pages.home_page import HomePage
-from mightyjaxx.pages.about_us_page import AboutUsPage
-from mightyjaxx.pages.blogs_page import BlogsPage
-from mightyjaxx.common.popup_utils import dismiss_popups
+from .config.environment import Config
+from .pages.home_page import HomePage
+from .pages.about_us_page import AboutUsPage
+from .pages.blogs_page import BlogsPage
+from .common.popup_utils import dismiss_popups
 
 async def pre_step(playwright):
     # Get the current date and time in YYYYMMDD_HHMM format
