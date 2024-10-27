@@ -1,13 +1,17 @@
 import asyncio
+import allure
+import subprocess
+import pytest
 import os
 from playwright.async_api import async_playwright
 from datetime import datetime
 
-from .config.environment import Config
-from .pages.home_page import HomePage
-from .pages.about_us_page import AboutUsPage
-from .pages.blogs_page import BlogsPage
-from .common.popup_utils import dismiss_popups
+from config.environment import Config
+from pages.home_page import HomePage
+from pages.about_us_page import AboutUsPage
+from pages.blogs_page import BlogsPage
+from common.popup_utils import dismiss_popups
+from common.common import CommonActions
 
 async def pre_step(playwright):
     # Get the current date and time in YYYYMMDD_HHMM format

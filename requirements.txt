@@ -1,2 +1,3 @@
 #Run pip install -r requirements.txt to setup testing environment
 playwright
+pytest

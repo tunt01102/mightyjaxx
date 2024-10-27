@@ -3,10 +3,8 @@ async def dismiss_popups(page):
     try:
         new_user_popup_visible = await page.locator("id = title-Close dialog").is_visible(timeout=2000)
         if new_user_popup_visible:
-            new_user_email_selector = "id='email_119411823'"
-            await page.fill(new_user_email_selector, "tunt01102@gmail.com")
-            await page.click("class="needsclick go300628013 kl-private-reset-css-Xuajs1")
-            #await page.click("id= title-Close dialog")
+            await page.click("id= title-Close dialog")
+            await page.keyboard.press("Escape")
             print("New user popup dismissed.")
     except Exception as e:
         print("No new user popup to dismiss or error occurred:", str(e))
