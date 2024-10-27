@@ -14,12 +14,18 @@ async def testcase001_check_about_us_page():
 
         # Step 1: Go to Mighty Jaxx homepage
         await home_page.navigate_to_homepage()
+        await page.wait_for_load_state('networkidle')
         expected_home_page_title = "Mighty Jaxx HQ - Designer Toys, Action Figures & Limited Edition Items"
         await CommonActions.check_title(page, expected_home_page_title)
         print("Step test 1: Go to home page and check home page title.")
 
         # Dismiss popups again in case they appear after navigating
-        await dismiss_popups(page)
+        # await page.fill("//input[@type='email' and @placeholder='Enter your email address']", "your_email@example.com")
+        # await page.click("//button[text()='Subscribe']")
+        await page.keyboard.press("Escape")
+        # await home_page.new_subscribe("tunt01102@gmail.com")
+        # await page.mouse.dblclick(200, 200)
+        await home_page.cookie_manager()
 
         # Step 2: Click on the 'About Us' link
         await page.locator("text=About Us").click()

@@ -54,7 +54,13 @@ async def test_scenario_001():
 
         # 1. Go to home page
         await page.goto("https://www.mightyjaxx.com")
+        await page.wait_for_load_state('networkidle')
         print("Step test 1: Go to home page.")
+
+        # skip pop-ups
+        await page.keyboard.press("Escape")
+        await page.locator("text='Accept all'").is_visible(timeout=2000)
+        await page.click("text='Accept all'")
 
         # 2. Click on About us
         await page.locator("text=About Us").click()
